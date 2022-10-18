@@ -26,6 +26,7 @@
 		8008B95828FC5D750070FE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8008B95E28FC5ECA0070FE34 /* ViewExperiment.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ViewExperiment.playground; path = ../ViewExperiment.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		802A093B28FC85E3004AFAA9 /* BezierExperiments.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BezierExperiments.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		809AD45E28FF033F008C5C6E /* Card.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Card.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 				8008B95828FC5D750070FE34 /* Info.plist */,
 				8008B95E28FC5ECA0070FE34 /* ViewExperiment.playground */,
 				802A093B28FC85E3004AFAA9 /* BezierExperiments.playground */,
+				809AD45E28FF033F008C5C6E /* Card.playground */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
