@@ -13,7 +13,7 @@ extension ShapeLayerProtocol {
     }
 }
 
-class CyrcleShapeL: CAShapeLayer, ShapeLayerProtocol {
+class CyrcleShape: CAShapeLayer, ShapeLayerProtocol {
     required init(size: CGSize, fillColor: CGColor) {
         super.init()
         let radius = ([size.width, size.height].min() ?? 0) / 2
@@ -90,12 +90,40 @@ class BackSideCircle: CAShapeLayer, ShapeLayerProtocol {
     }
 }
 
+class BackSideLines: CAShapeLayer, ShapeLayerProtocol {
+    required init(size: CGSize, fillColor: CGColor) {
+        super.init()
+        let path = UIBezierPath()
+        
+        for _ in 1...15 {
+            let randomNumberArray = { (value: CGSize) -> [Int] in
+                [Int.random(in: 1...Int(value.width)),
+                 Int.random(in: 1...Int(value.height))]
+            }
+            let randomXs = randomNumberArray(size)
+            let randomYs = randomNumberArray(size)
+            print(randomXs, randomYs)
+            
+            path.move(to: CGPoint(x: randomXs[0], y: randomXs[1]))
+            path.addLine(to: CGPoint(x: randomYs[0], y: randomYs[1]))
+        }
+        
+        self.path = path.cgPath
+        self.strokeColor = fillColor
+        self.lineWidth = 3
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("You can't use initial init")
+    }
+}
+
 class MyViewController : UIViewController {
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
         self.view = view
-        view.layer.addSublayer( BackSideCircle(size: CGSize(width: 150, height: 150), fillColor: UIColor.red.cgColor) )
+        view.layer.addSublayer( BackSideLines(size: CGSize(width: 150, height: 150), fillColor: UIColor.red.cgColor) )
     }
 }
 // Present the view controller in the Live View window
