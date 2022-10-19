@@ -102,7 +102,6 @@ class BackSideLines: CAShapeLayer, ShapeLayerProtocol {
             }
             let randomXs = randomNumberArray(size)
             let randomYs = randomNumberArray(size)
-            print(randomXs, randomYs)
             
             path.move(to: CGPoint(x: randomXs[0], y: randomXs[1]))
             path.addLine(to: CGPoint(x: randomYs[0], y: randomYs[1]))
@@ -111,11 +110,37 @@ class BackSideLines: CAShapeLayer, ShapeLayerProtocol {
         self.path = path.cgPath
         self.strokeColor = fillColor
         self.lineWidth = 3
-    }
+    } 
     
     required init?(coder: NSCoder) {
         fatalError("You can't use initial init")
     }
+}
+
+class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableView {
+    var color: UIColor!
+    var isFlipper: bool = false
+    var flipCompletionHandler: ((FlippableView) -> Void)? { get set }
+    
+    init(frame: CGRect, color: UIColor) {
+        super.init(frame: frame)
+        self.color = color
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Fatal error")
+    }
+    
+    func flip() {
+        
+    }
+}
+
+protocol FlippableView {
+    var isFlipped: Bool { get set }
+    var flipCompletionHandler: ((FlippableView) -> Void)? { get set }
+    func flip()
+    
 }
 
 class MyViewController : UIViewController {
