@@ -13,7 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    print(Bundle.main.loadNibNamed(<#T##String#>, owner: <#T##Any?#>))
 
 }
 

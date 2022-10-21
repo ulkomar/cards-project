@@ -117,30 +117,8 @@ class BackSideLines: CAShapeLayer, ShapeLayerProtocol {
     }
 }
 
-class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableView {
-    var color: UIColor!
-    var isFlipper: bool = false
-    var flipCompletionHandler: ((FlippableView) -> Void)? { get set }
-    
-    init(frame: CGRect, color: UIColor) {
-        super.init(frame: frame)
-        self.color = color
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("Fatal error")
-    }
-    
-    func flip() {
-        
-    }
-}
-
-protocol FlippableView {
-    var isFlipped: Bool { get set }
-    var flipCompletionHandler: ((FlippableView) -> Void)? { get set }
-    func flip()
-    
+class CardView<ShapeType: ShapeLayerProtocol>: UIView {
+   
 }
 
 class MyViewController : UIViewController {
